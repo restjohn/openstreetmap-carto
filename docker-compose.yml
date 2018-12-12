@@ -1,7 +1,8 @@
 version: '2'
 services:
-  kosmtik:
-    image: kosmtik:v1
+
+  kosmtik-orig:
+    image: osm-carto/kosmtik:v1
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,6 +15,36 @@ services:
     environment:
       - PGHOST=db
       - PGUSER=postgres
+
+  kosmtik:
+    image: restjohn/kosmtik:latest
+    build:
+      context: ../docker-kosmtik
+    volumes:
+      - .:/opt/project
+    ports:
+      - "127.0.0.1:6789:6789"
+    command: [--host, "0.0.0.0", project.mml]
+
+  osm-bright:
+    image: restjohn/kosmtik:latest
+    build:
+      context: ../docker-kosmtik
+    volumes:
+      - ../mapbox/osm-bright/osm-bright:/opt/project
+    ports:
+      - "127.0.0.1:6789:6789"
+    command: [--host, "0.0.0.0", osm-bright.osm2pgsql.mml]
+
+  osm-utils:
+    image: restjohn/mapnik-python:latest
+    build:
+      context: ../openstreetmap/mapnik-stylesheets
+    volumes:
+      - .:/openstreetmap-carto
+      - ../openstreetmap/mapnik-stylesheets:/osm-utils
+    entrypoint: ["bash"]
+
   db:
     image: db:v1
     build:
@@ -24,6 +55,7 @@ services:
     environment:
       - PG_WORK_MEM
       - PG_MAINTENANCE_WORK_MEM
+
   import:
     image: import:v1
     build:

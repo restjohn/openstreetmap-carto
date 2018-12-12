@@ -54,7 +54,7 @@
 @societal_amenities: #ffffe5;   // Lch(99,13,109)
 @tourism: #734a08;
 @quarry: #c5c3c3;
-@military: #f55;
+@military: rgb(252, 150, 150);
 @beach: #fff1ba;
 @wastewater_plant: @industrial;
 @wastewater_plant-line: @industrial-line;
@@ -95,8 +95,8 @@
 
   [feature = 'leisure_swimming_pool'][zoom >= 14] {
     polygon-fill: @water-color;
-    [zoom >= 17] { 
-      line-width: 0.5; 
+    [zoom >= 17] {
+      line-width: 0.5;
       line-color: saturate(darken(@water-color, 20%), 20%);
     }
     [way_pixels >= 4]  { polygon-gamma: 0.75; }

@@ -1,9 +1,12 @@
 Map {
   background-color: @water-color;
+  background-color: rgb(78, 53, 33);
+  buffer-size: 128.0;
 }
 
 @water-color: #aad3df;
 @land-color: #f2efe9;
+@water-feature: rgb(200, 181, 235);
 
 @standard-halo-radius: 1;
-@standard-halo-fill: rgba(255,255,255,0.6);
+@standard-halo-fill: black;
