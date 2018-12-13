@@ -1631,7 +1631,7 @@
   [feature = 'place_islet'][zoom >= 11][way_pixels > 3000][way_pixels < 800000],
   [feature = 'place_islet'][zoom >= 17][way_pixels < 800000] {
     text-name: "[name]";
-    text-fill: #000;
+    text-fill: white;
     text-size: @landcover-font-size;
     text-wrap-width: @landcover-wrap-width-size;
     text-line-spacing: @landcover-line-spacing-size;
@@ -2985,7 +2985,7 @@
     text-size: @standard-font-size;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
-    text-fill: @water-feature;
+    text-fill: @airtransport;
     text-dy: 10;
     text-face-name: @oblique-fonts;
     text-halo-radius: @standard-halo-radius;

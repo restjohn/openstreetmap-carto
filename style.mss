@@ -1,6 +1,6 @@
 Map {
   background-color: @water-color;
-  background-color: rgb(78, 53, 33);
+  background-color: rgba(0, 0, 0, 0);
   buffer-size: 128.0;
 }
 

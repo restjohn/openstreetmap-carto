@@ -1,4 +1,4 @@
-@admin-boundaries: #ac46ac;
+@admin-boundaries: #cf80cf;
 
 @admin-simplify: 4;
 @admin-simplify-algorithm: visvalingam-whyatt;

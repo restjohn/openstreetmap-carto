@@ -1,7 +1,7 @@
-@placenames: rgb(255, 255, 255);
-@placenames-light: #ffffff;
-@country-labels: darken(@admin-boundaries, 15%);
-@state-labels: desaturate(darken(@admin-boundaries, 5%), 20%);
+@placenames: white;
+@placenames-light: white;
+@country-labels: rgb(216, 151, 205);
+@state-labels: lighten(@country-labels, 10%);
 
 .country {
   [zoom >= 3][zoom < 5][way_pixels > 1000],
