@@ -2109,7 +2109,7 @@
       }
       [feature = 'boundary_national_park'],
       [feature = 'leisure_nature_reserve'] {
-        text-fill: darken(@park, 0%);
+        text-fill: @park;
       }
     }
   }
