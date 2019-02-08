@@ -5,7 +5,7 @@ Map {
 
 @water-color: #aad3df;
 @land-color: #f2efe9;
-@water-feature: rgb(200, 181, 235);
+@water-feature: @water-text;
 
 @standard-halo-radius: 1;
 @standard-halo-fill: black;

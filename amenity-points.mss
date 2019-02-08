@@ -5,7 +5,7 @@
 @transportation-text: lighten(@transportation-icon, 30%);
 @accommodation-icon: @transportation-icon;
 @accommodation-text: @transportation-text;
-@airtransport: rgb(232, 255, 129); //also ferry_terminal
+@airtransport: rgb(164, 224, 252);
 @marina-text: @water-feature; // also swimming_pool
 @health-color: #ff4040;
 @health-text: lighten(@health-color, 15%);
@@ -14,8 +14,8 @@
 @gastronomy-text: darken(@gastronomy-icon, 5%);
 @memorials: @amenity-brown;
 @culture: @amenity-brown;
-@public-service: #0092da;
-@fire: rgb(255, 145, 0);
+@public-service: #e0f5ff;
+@fire: rgb(255, 123, 0);
 @office: #4863A0;
 @man-made-icon: #555;
 @advertising-grey: @man-made-icon;
@@ -273,10 +273,11 @@
   // }
 
   [feature = 'amenity_fire_station'][zoom >= 16] {
-    marker-file: url('symbols/amenity/firestation.svg');
+    marker-file: url('symbols/amenity/firestation-overlay.svg');
     marker-fill: @fire;
     marker-placement: interior;
     marker-clip: false;
+    marker-transform: scale(1.1);
   }
 
   // [feature = 'amenity_fountain'] {
@@ -342,8 +343,8 @@
   // }
 
   [feature = 'amenity_hospital'][zoom >= 15] {
-    marker-file: url('symbols/amenity/hospital.svg');
-    marker-fill: @health-color;
+    marker-file: url('symbols/amenity/hospital-overlay.svg');
+    // marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
   }
@@ -617,19 +618,21 @@
   //   }
   // }
 
-  [feature = 'amenity_pharmacy'][zoom >= 17] {
-    marker-file: url('symbols/amenity/pharmacy.svg');
+  [feature = 'amenity_pharmacy'][zoom >= 16] {
+    marker-file: url('symbols/amenity/pharmacy-overlay.svg');
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
+    marker-transform: scale(1.2);
   }
 
   [feature = 'amenity_clinic'][zoom >= 16],
   [feature = 'amenity_doctors'][zoom >= 17] {
-    marker-file: url('symbols/amenity/doctors.svg');
+    marker-file: url('symbols/amenity/doctors-overlay.svg');
     marker-fill: @health-color;
     marker-placement: interior;
     marker-clip: false;
+    marker-transform: scale(1.2);
   }
 
   // [feature = 'amenity_dentist'][zoom >= 17] {
@@ -704,8 +707,8 @@
   // }
 
   [feature = 'amenity_police'][zoom >= 16] {
-    marker-file: url('symbols/amenity/police.svg');
-    marker-fill: @public-service;
+    marker-file: url('symbols/amenity/noun_Police_61736_000000.svg');
+    marker-fill: rgb(55, 87, 146);
     marker-placement: interior;
     marker-clip: false;
   }
@@ -1400,25 +1403,27 @@
   // }
 
   [feature = 'aeroway_helipad'][zoom >= 16] {
-    marker-file: url('symbols/helipad.16.svg');
+    marker-file: url('symbols/noun_Helicopter_2009301_000000.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @airtransport;
+    marker-transform: translate(0,5);
   }
 
   [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
-  [feature = 'aeroway_aerodrome'][zoom >= 11][zoom < 14] {
-    marker-file: url('symbols/aerodrome.12.svg');
+  [feature = 'aeroway_aerodrome'][zoom >= 11] {
+    marker-file: url('symbols/aerodrome.12-overlay.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @airtransport;
   }
 
   [feature = 'amenity_ferry_terminal'][zoom >= 15] {
-    marker-file: url('symbols/amenity/ferry.svg');
+    marker-file: url('symbols/amenity/ferry-overlay.svg');
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @water-feature;
+    marker-transform: scale(1.25);
   }
 
   // [feature = 'man_made_lighthouse'][zoom >= 15] {
@@ -2986,11 +2991,14 @@
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @airtransport;
-    text-dy: 10;
+    text-dy: 14;
     text-face-name: @oblique-fonts;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-placement: interior;
+    [feature = 'amenity_ferry_terminal'] {
+      text-fill: @water-feature;
+    }
   }
 
   // [feature = 'amenity_hunting_stand'][zoom >= 17] {
