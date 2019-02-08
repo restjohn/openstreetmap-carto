@@ -1407,7 +1407,7 @@
     marker-placement: interior;
     marker-clip: false;
     marker-fill: @airtransport;
-    marker-transform: translate(0,5);
+    marker-transform: translate(0,2);
   }
 
   [feature = 'aeroway_aerodrome']['access' != 'private']['icao' != null]['iata' != null][zoom >= 10][zoom < 14],
@@ -2976,7 +2976,7 @@
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-fill: @airtransport;
-    text-dy: -10;
+    text-dy: -14;
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
