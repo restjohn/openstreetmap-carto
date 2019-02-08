@@ -300,7 +300,7 @@
 @shield-repeat-distance: 400;
 @shield-margin: 40;
 @shield-font: @book-fonts;
-@shield-clip: false;
+@shield-clip: true;
 
 @major-highway-text-repeat-distance: 50;
 @minor-highway-text-repeat-distance: 10;
@@ -2755,7 +2755,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     shield-margin: @shield-margin;
     shield-face-name: @shield-font;
     shield-clip: @shield-clip;
-    // shield-avoid-edges: true;
+    shield-avoid-edges: true;
 
     [highway = 'motorway'] {
       shield-fill: @motorway-shield;
@@ -2805,6 +2805,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       shield-margin: @shield-margin;
       shield-face-name: @shield-font;
       shield-clip: @shield-clip;
+      shield-avoid-edges: true;
 
       [highway = 'motorway'] {
         shield-fill: @motorway-shield;
