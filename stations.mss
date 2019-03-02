@@ -1,5 +1,6 @@
-@station-color: #ffcfa8;
-@station-text: darken(saturate(@station-color, 15%), 10%);
+// @station-color: darken(saturate(@secondary-fill, 25%), 40%);
+@station-color: lighten(@airtransport, 10%);
+@station-text: @station-color;
 
 .stations {
   [railway = 'subway_entrance'][zoom >= 17] {
@@ -7,14 +8,16 @@
     marker-placement: interior;
     marker-fill: @station-color;
     marker-clip: false;
-    marker-width: 14;
+    marker-width: 15;
+    marker-line-color: black;
+    marker-line-width: 1.0;
     // [zoom >= 19] {
       text-name: [ref];
       text-face-name: @book-fonts;
       text-size: 10;
       text-fill: @transportation-icon;
-      text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
+      text-dy: 11;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: 0;
       text-placement: interior;
@@ -22,18 +25,18 @@
   }
 
   [railway = 'station'][zoom >= 12] {
-    marker-file: url('symbols/noun_Train_12623_000000.svg');
+    marker-file: url('symbols/passenger_train.svg');
     marker-placement: interior;
     marker-fill: @station-color;
     marker-clip: false;
-    marker-width: 16;
+    marker-width: 15;
     [zoom >= 14] {
       text-name: "[name]";
       text-face-name: @bold-fonts;
       text-size: 10;
       text-fill: @station-text;
-      text-dy: 9;
-      text-halo-radius: @standard-halo-radius * 1.5;
+      text-dy: 11;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: 30; // 3 em
       text-line-spacing: -1.5; // -0.15 em
@@ -43,25 +46,25 @@
       text-size: 11;
       text-wrap-width: 33; // 3 em
       text-line-spacing: -1.65; // -0.15 em
-      text-dy: 10;
+      text-dy: 13;
     }
   }
 
   [railway = 'halt'] {
     [zoom >= 13] {
-      marker-file: url('symbols/noun_Train_12623_000000.svg');
+      marker-file: url('symbols/passenger_train.svg');
       marker-placement: interior;
       marker-fill: @station-color;
       marker-clip: false;
-      marker-width: 16;
+      marker-width: 15;
     }
     [zoom >= 15] {
       text-name: "[name]";
       text-face-name: @bold-fonts;
       text-size: @standard-font-size;
       text-fill: @station-text;
-      text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
+      text-dy: 13;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
@@ -86,7 +89,7 @@
       text-size: @standard-font-size;
       text-fill: @station-text;
       text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
@@ -107,7 +110,7 @@
       text-size: @standard-font-size;
       text-fill: @station-text;
       text-dy: 10;
-      text-halo-radius: @standard-halo-radius * 1.5;
+      text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
