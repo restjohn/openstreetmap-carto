@@ -6,22 +6,20 @@
   [railway = 'subway_entrance'][zoom >= 17] {
     marker-file: url('symbols/noun_Subway_4174_000000.svg');
     marker-placement: interior;
-    marker-fill: @station-color;
+    marker-fill: darken(@station-color, 20%);
     marker-clip: false;
-    marker-width: 15;
+    marker-width: 18;
     marker-line-color: black;
     marker-line-width: 1.0;
-    // [zoom >= 19] {
-      text-name: [ref];
-      text-face-name: @book-fonts;
-      text-size: 10;
-      text-fill: @transportation-icon;
-      text-dy: 11;
-      text-halo-radius: @standard-halo-radius;
-      text-halo-fill: @standard-halo-fill;
-      text-wrap-width: 0;
-      text-placement: interior;
-    // }
+    text-name: [ref];
+    text-face-name: @book-fonts;
+    text-size: 10;
+    text-fill: darken(@station-text, 10%);
+    text-dy: 11;
+    text-halo-radius: @standard-halo-radius;
+    text-halo-fill: @standard-halo-fill;
+    text-wrap-width: 0;
+    text-placement: interior;
   }
 
   [railway = 'station'][zoom >= 12] {
