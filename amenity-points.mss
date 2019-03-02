@@ -708,7 +708,7 @@
 
   [feature = 'amenity_police'][zoom >= 16] {
     marker-file: url('symbols/amenity/noun_Police_61736_000000.svg');
-    marker-fill: rgb(55, 87, 146);
+    marker-fill: rgb(95, 126, 184);
     marker-placement: interior;
     marker-clip: false;
   }
